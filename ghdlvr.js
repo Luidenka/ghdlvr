@@ -1,6 +1,6 @@
 var ghlink = window.location.pathname;
 
-if (ghlink == null) {
+if (ghlink == '/') {
     document.write('\<!DOCTYPE html>\
     \
     <head>\
