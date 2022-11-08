@@ -23,7 +23,13 @@ if (file == null) {
     </body>')
 }
 else {
+    var meta = document.createElement('meta');
     var code = document.createElement('pre');
+    meta.name = "color-scheme";
+    meta.content = "light-dark";
+    code.style.wordWrap = "break-word";
+    code.style.whiteSpace = "pre-wrap";
+    document.head.appendChild(meta);
     document.body.appendChild(code);
     fetch(`https://raw.githubusercontent.com${file}`)
         .then(response => response.text().then(data => code.innerText = data));
