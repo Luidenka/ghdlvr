@@ -25,9 +25,9 @@ if (file == null) {
 else {
     var meta = document.createElement('meta');
     var code = document.createElement('pre');
-    meta.name = "color-scheme";
-    meta.content = "light-dark";
-    code.style.wordWrap = "break-word";
+    meta.httpEquiv = "Content-type";
+    meta.content = "text/javascript";
+    code.style = "word-wrap: break-word";
     code.style.whiteSpace = "pre-wrap";
     document.head.appendChild(meta);
     document.body.appendChild(code);
