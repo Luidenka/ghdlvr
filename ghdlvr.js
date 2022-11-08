@@ -25,7 +25,7 @@ if (file == null) {
 else {
     var meta = document.createElement('meta');
     var code = document.createElement('pre');
-    meta.httpEquiv = "Content-type";
+    meta.httpEquiv = "Content-Type";
     meta.content = "text/javascript";
     code.style = "word-wrap: break-word";
     code.style.whiteSpace = "pre-wrap";
