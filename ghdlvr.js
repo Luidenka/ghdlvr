@@ -1,11 +1,11 @@
-var ghlink = window.location.pathname;
+var link = new URL(window.location.href);
+var file = link.searchParams.get('f');
 
-if (ghlink == '/') {
+if (file == null) {
     document.write('\<!DOCTYPE html>\
     \
     <head>\
         <title>GHDlvr</title>\
-        <script src="https://cdn.jsdelivr.net/gh/Luidenka/ghdlvr@latest/ghdlvr.js"></script>\
     </head>\
     \
     <body>\
@@ -16,8 +16,8 @@ if (ghlink == '/') {
         </form>\
         <script>\
             document.getElementById(\'ghlink\').onchange = (e) => {\
-                document.getElementById(\'output\').innerText =\
-                    `https://ghdlvr.github.io/${new URL(document.getElementById(\'ghlink\'.innerText).pathname)}`\
+                document.getElementById(\'output\').value =\
+                    `https://ghdlvr.github.io?f=${new URL(document.getElementById(\'ghlink\').value).pathname}`\
             }\
         </script>\
     </body>')
@@ -25,6 +25,6 @@ if (ghlink == '/') {
 else {
     var code = document.createElement('pre');
     document.body.appendChild(code);
-    fetch(`https://raw.githubusercontent.com/${ghlink}`)
+    fetch(`https://raw.githubusercontent.com${file}`)
         .then(response => response.text().then(data => code.innerText = data));
 }
