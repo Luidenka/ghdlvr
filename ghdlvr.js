@@ -23,10 +23,7 @@ if (file == null) {
     </body>')
 }
 else {
-    var meta = document.createElement('meta');
     var code = document.createElement('pre');
-    meta.httpEquiv = "content-type";
-    meta.content = "text/javascript";
     code.style = "word-wrap: break-word";
     code.style.whiteSpace = "pre-wrap";
     document.head.appendChild(meta);
